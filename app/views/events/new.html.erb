@@ -1,0 +1,43 @@
+
+<h1> Créer un nouvel événement ! </h1>
+
+
+<!-- ... -->
+
+<form>
+  <div class="form-group">
+
+<%= form_tag events_path(action: 'create'), method: "post" do %>
+
+  <%= label_tag 'Titre' %>
+  <%= text_field_tag 'title', @event.title %>
+  <br /> <br />
+
+  <%= label_tag 'Quand' %>
+  <%= datetime_field_tag 'start_date', @event.start_date %>
+  <br /> <br />
+
+  <%= label_tag 'Description' %>
+  <%= text_area_tag 'description', @event.description %>
+  <br /> <br />
+
+  <%= label_tag 'Durée' %>
+  <%= text_field_tag 'duration', @event.duration %>
+  <br /> <br />
+  
+  <%= label_tag 'Prix pour 1 entrée' %>
+  <%= text_field_tag 'price', @event.price %>
+  <br /> <br />
+
+  <%= label_tag 'Où ça ?' %>
+  <%= text_field_tag 'location', @event.location %>
+  <br /> <br />
+
+  <%= submit_tag "Create Gossip", class: 'btn btn-primary' %>
+
+<% end %>
+
+</div>
+</form>
+
+<!-- ... -->

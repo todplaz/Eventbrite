@@ -1,0 +1,14 @@
+<div class="card">
+    <div class="card-header">
+         Event numéro <%= @event %>: 
+    </div>
+
+    <div class="card-body">
+        <h6 class="card-title"> <U>le titre de l'Event est:</U> <%=@event_id.title %> </h6>
+            <h7> l'auteur est: <%= link_to "#{@event_id.user.email}", user_path%></h7>
+            <p> cette event a été crée le: <%=@event_id.created_at %> </p> </br>
+            <p><U>Contenu de l'event:</U> </p> </br>
+            <p> <%=@event_id.description %> </p> </br>
+            <a href="<%=  event_path(@event) %>" class="btn btn-danger"  data-confirm="Etes-vous sur ?" data-method="DELETE"> Supprimer </a>
+    </div>
+</div>

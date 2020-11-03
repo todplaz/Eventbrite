@@ -1,0 +1,20 @@
+<h1> Bienvenue sur The Event Project ! </h1> 
+
+<div class ="container" style="padding-top: 5rem;">
+
+<br>
+<%= button_to "Creer un Event", new_event_path, :method => "get", class:'btn btn-success' %>
+<br>
+
+<div class="card-columns">
+  <% @events.each do |event|%>
+    <div class="card" style="max-width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"> Title : <%= event.title %></h5> 
+        <p class="card-text"><small class="text-muted"> Author <%= event.user.first_name %></small></p>
+        <%= link_to "voir l'event", event_path(event.id), class:"btn btn-primary" %>
+        <a href="<%=  event_path(event.id) %>" class="btn btn-danger"  data-confirm="Etes-vous surs de vouloir supprimer le event ?" data-method="DELETE"> Supprimer </a>
+      </div>
+    </div>
+  <% end %>
+</div>
